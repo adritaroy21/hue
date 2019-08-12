@@ -1,3 +1,9 @@
+.wrapper {
+  height: 100vh;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .colour-area {
   height: 20rem;
   width: 20rem;
@@ -37,4 +43,12 @@
 
 #message {
   display: none;
+}
+
+.footer {
+  height: 5rem;
+}
+
+.footer a {
+  color: #f8f9fa;
 }
