@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+
+    <title>Random Colour Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="text-center m-4">
+        <h2>Random Colour Generator</h2>
+      </div>
+        <!-- Colour is displayed in this area -->
+        <div class="colour-area mt-5" id="colour"></div>
+
+        <!--Generate button -->
+        <button class="btn btn-block btn-dark text-light p-2" id="generate">Generate!</button>
+
+        <!-- Hex Number Display Area -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <div class="input-group mt-4">
+                        <div class="input-group-prepend">
+                            <button id="copy" class="btn btn-dark copy-btn" data-toggle="tooltip" data-placement="top" title="Copy Hex">
+                                <span class="input-group-text bg-dark"><i class="far fa-copy text-light"></i></span>
+                            </button>
+                        </div>
+                        <input type="text" class="form-control" id="hex">
+                    </div>
+                    <p class="h6 text-center mt-2" id="message">Hex Copied!</p>
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+    </script>
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+  </body>
+</html>
