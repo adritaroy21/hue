@@ -1,9 +1,10 @@
 body {
   font-family: 'Montserrat', sans-serif;
+  margin: 0;
 }
 
 .wrapper {
-  height: 100vh;
+  height: calc(96vh - 2.5rem);
 }
 
 .colour-area {
@@ -49,8 +50,31 @@ body {
 
 .footer {
   height: 2.5rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .footer a {
   color: #f8f9fa;
+}
+
+@media only screen and (max-width: 500px) {
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .colour-area {
+    height: 15rem;
+    width: 15rem;
+  }
+
+  .btn-block {
+    width: 15rem;
+  }
+
+  .input-group {
+    width: 15rem;
+  }
 }
