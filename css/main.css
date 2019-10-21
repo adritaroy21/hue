@@ -7,7 +7,9 @@ body {
   margin-top: 2vh;
 }
 
-.colour-area {
+.colour-area,
+.history-area,
+.info-area {
   height: 65vh;
   width: 20rem;
   border: 3px #343a40 solid;
@@ -50,15 +52,6 @@ body {
   color: black;
   border-radius: 0px;
   background: white !important;
-}
-
-.history-area,
-.info-area {
-  height: 65vh;
-  width: 20rem;
-  border: 3px #343a40 solid;
-  display: block;
-  margin: auto;
 }
 
 .colour-area:hover,
@@ -138,6 +131,16 @@ body {
 @media only screen and (max-width: 500px) {
   .main {
     margin-top: 1em;
+  }
+
+  .colour-area,
+  .history-area,
+  .info-area {
+    height: 60vh;
+    width: 20rem;
+    border: 3px #343a40 solid;
+    display: block;
+    margin: auto;
   }
 
   .history-area {
