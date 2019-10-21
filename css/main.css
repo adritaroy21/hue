@@ -136,8 +136,8 @@ body {
   .colour-area,
   .history-area,
   .info-area {
-    height: 60vh;
-    width: 20rem;
+    height: 55vh;
+    width: 85vw;
     border: 3px #343a40 solid;
     display: block;
     margin: auto;
