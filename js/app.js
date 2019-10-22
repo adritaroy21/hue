@@ -4,6 +4,7 @@ const hex = document.getElementById('hex');
 const copy = document.getElementById('primaryCopyBtn');
 const message = document.getElementById('message');
 const historyContent = document.getElementById('history-content');
+const search = document.getElementById('search');
 
 const name = document.getElementById('name');
 const rgb = document.getElementById('rgb');
@@ -15,8 +16,6 @@ const status = document.getElementById('status');
 const fields = [name, rgb, cmyk, hsv, hsl, xyz];
 
 let hexHistoryQueue = [];
-
-hex.readOnly = true;
 
 // Get existing history from LS if any
 function getHistoryFromStorage() {
@@ -55,9 +54,6 @@ function updateInfoArea(data) {
   } else {
     status.innerHTML = `(offline)`;
     status.setAttribute('class', 'text-danger');
-    // fields.forEach((item, index) => {
-    //   item.innerHTML = `<i class="far fa-clock"></i>`;
-    // });
   }
 }
 
@@ -156,12 +152,14 @@ copy.addEventListener('click', () => {
   document.execCommand('copy');
   let temp = hex.value;
   hex.value = 'Copied!';
+  copy.disabled = true;
   setTimeout(() => {
     hex.value = temp;
+    copy.disabled = false;
   }, 1000);
 });
 
-// History area copy button even listener
+// History area copy button event listener
 historyContent.addEventListener('click', e => {
   if (e.target.id === 'copy') {
     let hexNode = e.target.parentNode.childNodes[1];
@@ -174,6 +172,20 @@ historyContent.addEventListener('click', e => {
     setTimeout(() => {
       e.target.innerHTML = '<i class="fa fa-copy"></i> Copy';
     }, 1000);
+  }
+});
+
+// Search button event listener
+search.addEventListener('click', () => {
+  if (hex.value.match(/^#[0-9A-F]{6}$/i) === hex.value) {
+    searchHex = hex.value;
+    colour.style.backgroundColor = searchHex;
+    fetchColorInfo(searchHex.substring(1, 7));
+    updateHistory(searchHex);
+    updateStorage();
+    updateHistoryArea();
+  } else {
+    hex.value = 'Invalid Hex';
   }
 });
 
