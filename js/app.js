@@ -83,8 +83,10 @@ function updateHistory(hexValue) {
   if (hexHistoryQueue.length < 11) {
     hexHistoryQueue.push(hexValue);
   } else {
-    hexHistoryQueue.shift();
-    hexHistoryQueue.push(hexValue);
+    if (!hexHistoryQueue.includes(hexValue)) {
+      hexHistoryQueue.shift();
+      hexHistoryQueue.push(hexValue);
+    }
   }
 }
 
@@ -144,20 +146,25 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Generate new colour
-generate.addEventListener('click', randomColour);
+generate.addEventListener('click', () => {
+  hex.style.background = '#e9ecef';
+  randomColour();
+});
 
 // Primary copy button event listener
 copy.addEventListener('click', () => {
-  hex.select();
-  document.execCommand('copy');
-  hex.blur();
-  let temp = hex.value;
-  hex.value = 'Copied!';
-  copy.disabled = true;
-  setTimeout(() => {
-    hex.value = temp;
-    copy.disabled = false;
-  }, 1000);
+  if (hex.value !== '') {
+    hex.select();
+    document.execCommand('copy');
+    hex.blur();
+    let temp = hex.value;
+    hex.value = 'Copied!';
+    copy.disabled = true;
+    setTimeout(() => {
+      hex.value = temp;
+      copy.disabled = false;
+    }, 1000);
+  }
 });
 
 // History area copy button event listener
@@ -177,8 +184,15 @@ historyContent.addEventListener('click', e => {
   }
 });
 
+// Input field click event listener
+hex.addEventListener('click', () => {
+  hex.style.background = '#ffffff';
+  hex.value = '';
+});
+
 // Search button event listener
 search.addEventListener('click', () => {
+  hex.style.background = '#e9ecef';
   if (hex.value.match(/^#[0-9A-F]{6}$/i) == hex.value) {
     searchHex = hex.value;
     colour.style.backgroundColor = searchHex;
