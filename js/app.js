@@ -104,15 +104,15 @@ function updateHistoryArea() {
     const historyItem = document.createElement('div');
     historyItem.setAttribute(
       'class',
-      'history-item d-flex justify-content-between'
+      'history-item d-flex justify-content-between align-items-center'
     );
     historyItem.innerHTML = `
-      <div class="history-hex p-1">${item}</div>
+      <div class="history-hex p-2">${item}</div>
       <div
-        class="hex-preview p-1"
+        class="hex-preview mx-1 flex-grow-1 px-2"
         style="background: ${item};"
       ></div>
-      <div class="copy px-2 py-1" id="copy">
+      <div class="copy p-2" id="copy">
         <i class="fa fa-copy"></i> Copy
       </div>
     `;
@@ -150,6 +150,7 @@ generate.addEventListener('click', randomColour);
 copy.addEventListener('click', () => {
   hex.select();
   document.execCommand('copy');
+  hex.blur();
   let temp = hex.value;
   hex.value = 'Copied!';
   copy.disabled = true;
@@ -167,6 +168,7 @@ historyContent.addEventListener('click', e => {
     hex.value = hexNode.innerHTML;
     hex.select();
     document.execCommand('copy');
+    hex.blur();
     hex.value = temp;
     e.target.innerHTML = 'Copied!';
     setTimeout(() => {
