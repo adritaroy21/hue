@@ -90,141 +90,143 @@
     <link rel="manifest" href="./manifest.json" />
   </head>
   <body>
-    <div class="wrapper">
-      <div class="logo">
-        <img
-          src="./images/logo.png"
-          height="160"
-          width="160"
-          class="img-fluid mx-auto d-block mt-3"
-          alt="Hue logo"
-        />
+    <div class="logo">
+      <img
+        src="./images/logo.png"
+        height="160"
+        width="160"
+        class="img-fluid mx-auto d-block mt-3"
+        alt="Hue logo"
+      />
+    </div>
+    <div class="d-flex flex-wrap justify-content-center mt-3 credits">
+      <div class="p-1">
+        Built with <i class="fas fa-heart text-danger"></i> by
       </div>
-      <div class="d-flex flex-wrap justify-content-center mt-3">
-        <div class="p-1">
-          Built with <i class="fas fa-heart text-danger"></i> by
-        </div>
-        <div class="p-1">
-          <a class="text-dark" href="https://github.com/adroy21"
-            ><i class="fab fa-github text-dark"></i> adroy21</a
-          >
-          &
-        </div>
-        <div class="p-1">
-          <a class="text-dark" href="https://github.com/mukherjee96"
-            ><i class="fab fa-github text-dark"></i> mukherjee96</a
-          >
-        </div>
+      <div class="p-1">
+        <a class="text-dark" href="https://github.com/adroy21"
+          ><i class="fab fa-github text-dark"></i> adroy21</a
+        >
+        &
       </div>
-      <div class="container main">
-        <div class="row">
-          <!-- Color Generator -->
-          <div class="col-sm p-3">
-            <div class="colour-area d-flex flex-column justify-content-between">
-              <div class="colour" id="colour"></div>
-              <div class="actions">
-                <div class="d-flex flex-row justify-content-start">
-                  <div>
-                    <button
-                      class="btn btn-block btn-light generate"
-                      id="generate"
-                      data-toggle="tooltip"
-                      data-placement="bottom"
-                      title="Generate!"
-                    >
-                      <i class="fas fa-random"></i>
-                    </button>
-                  </div>
-                  <div>
-                    <button
-                      class="btn btn-block btn-light primaryCopyBtn"
-                      id="primaryCopyBtn"
-                      data-toggle="tooltip"
-                      data-placement="bottom"
-                      title="Copy Hex"
-                    >
-                      <i class="fas fa-copy"></i>
-                    </button>
-                  </div>
-                  <div>
-                    <input type="text" class="form-control" id="hex" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- More information about color -->
-          <div class="col-sm p-3">
-            <div class="info-area d-flex flex-column">
-              <div class="info-header">Color Information</div>
-              <div class="info-content flex-grow-1">
-                <div class="rgb d-flex flex-row align-items-center">
-                  <div class="key text-center">Name</div>
-                  <div class="value flex-grow-1 text-center" id="name">
-                    <i class="far fa-clock"></i>
-                  </div>
-                </div>
-                <div class="rgb d-flex flex-row align-items-center">
-                  <div class="key text-center">RGB</div>
-                  <div class="value flex-grow-1 text-center" id="rgb">
-                    <i class="far fa-clock"></i>
-                  </div>
-                </div>
-                <div class="cmyk d-flex flex-row align-items-center">
-                  <div class="key text-center">CMYK</div>
-                  <div class="value flex-grow-1 text-center" id="cmyk">
-                    <i class="far fa-clock"></i>
-                  </div>
-                </div>
-                <div class="hsv d-flex flex-row align-items-center">
-                  <div class="key text-center">HSV</div>
-                  <div class="value flex-grow-1 text-center" id="hsv">
-                    <i class="far fa-clock"></i>
-                  </div>
-                </div>
-                <div class="hsl d-flex flex-row align-items-center">
-                  <div class="key text-center">HSL</div>
-                  <div class="value flex-grow-1 text-center" id="hsl">
-                    <i class="far fa-clock"></i>
-                  </div>
-                </div>
-                <div class="xyz d-flex flex-row align-items-center">
-                  <div class="key text-center">XYZ</div>
-                  <div class="value flex-grow-1 text-center" id="xyz">
-                    <i class="far fa-clock"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="info-footer text-center p-1">
-                <small class="text-muted">
-                  <div class="text-danger" id="status">(offline)</div>
-                  Data from
-                  <a href="http://https://www.thecolorapi.com/"
-                    >The Color API</a
+      <div class="p-1">
+        <a class="text-dark" href="https://github.com/mukherjee96"
+          ><i class="fab fa-github text-dark"></i> mukherjee96</a
+        >
+      </div>
+    </div>
+    <div class="container main">
+      <div class="row">
+        <!-- Color Generator -->
+        <div class="col-sm p-3">
+          <div class="colour-area d-flex flex-column justify-content-between">
+            <div class="colour" id="colour"></div>
+            <div class="actions">
+              <div class="d-flex flex-row justify-content-start">
+                <div>
+                  <button
+                    class="btn btn-block btn-light generate"
+                    id="generate"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title="Generate!"
                   >
-                  <i
-                    class="fas fa-external-link-alt"
-                    style="font-size: 10px;"
-                  ></i>
-                </small>
+                    <i class="fas fa-random"></i>
+                  </button>
+                </div>
+                <div>
+                  <button
+                    class="btn btn-block btn-light primaryCopyBtn"
+                    id="primaryCopyBtn"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title="Copy Hex"
+                  >
+                    <i class="fas fa-copy"></i>
+                  </button>
+                </div>
+                <div>
+                  <input type="text" class="form-control" id="hex" />
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- History of generated colors -->
-          <div class="col-sm p-3">
-            <div
-              class="history-area d-flex flex-column justify-content-between"
-            >
-              <div class="history-header">History</div>
-              <div
-                class="history-content flex-grow-1"
-                id="history-content"
-              ></div>
+        <!-- More information about color -->
+        <div class="col-sm p-3">
+          <div class="info-area d-flex flex-column">
+            <div class="info-header">Color Information</div>
+            <div class="info-content flex-grow-1">
+              <div class="rgb d-flex flex-row align-items-center">
+                <div class="key text-center">Name</div>
+                <div class="value flex-grow-1 text-center" id="name">
+                  <i class="far fa-clock"></i>
+                </div>
+              </div>
+              <div class="rgb d-flex flex-row align-items-center">
+                <div class="key text-center">RGB</div>
+                <div class="value flex-grow-1 text-center" id="rgb">
+                  <i class="far fa-clock"></i>
+                </div>
+              </div>
+              <div class="cmyk d-flex flex-row align-items-center">
+                <div class="key text-center">CMYK</div>
+                <div class="value flex-grow-1 text-center" id="cmyk">
+                  <i class="far fa-clock"></i>
+                </div>
+              </div>
+              <div class="hsv d-flex flex-row align-items-center">
+                <div class="key text-center">HSV</div>
+                <div class="value flex-grow-1 text-center" id="hsv">
+                  <i class="far fa-clock"></i>
+                </div>
+              </div>
+              <div class="hsl d-flex flex-row align-items-center">
+                <div class="key text-center">HSL</div>
+                <div class="value flex-grow-1 text-center" id="hsl">
+                  <i class="far fa-clock"></i>
+                </div>
+              </div>
+              <div class="xyz d-flex flex-row align-items-center">
+                <div class="key text-center">XYZ</div>
+                <div class="value flex-grow-1 text-center" id="xyz">
+                  <i class="far fa-clock"></i>
+                </div>
+              </div>
+            </div>
+            <div class="info-footer text-center p-1">
+              <small class="text-muted">
+                <div class="text-danger" id="status">(offline)</div>
+                Data from
+                <a href="https://thecolorapi.com/">The Color API</a>
+                <i
+                  class="fas fa-external-link-alt"
+                  style="font-size: 10px;"
+                ></i>
+              </small>
             </div>
           </div>
         </div>
+
+        <!-- History of generated colors -->
+        <div class="col-sm p-3">
+          <div class="history-area d-flex flex-column justify-content-between">
+            <div class="history-header">History</div>
+            <div class="history-content flex-grow-1" id="history-content"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer text-center">
+        <small class="text-muted">
+          <a
+            href="mailto:ravelix410@gmail.com?subject=Hue - The Random Colour Generator"
+            class="text-dark"
+            >Have Feedback?</a
+          >
+        </small>
       </div>
     </div>
 
