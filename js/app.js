@@ -179,7 +179,7 @@ historyContent.addEventListener('click', e => {
 
 // Search button event listener
 search.addEventListener('click', () => {
-  if (hex.value.match(/^#[0-9A-F]{6}$/i) === hex.value) {
+  if (hex.value.match(/^#[0-9A-F]{6}$/i) == hex.value) {
     searchHex = hex.value;
     colour.style.backgroundColor = searchHex;
     fetchColorInfo(searchHex.substring(1, 7));
