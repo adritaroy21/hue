@@ -117,13 +117,16 @@ function updateHistoryArea() {
     historyContent.removeChild(historyContent.firstChild);
   }
   // Add contents of hexHistoryQueue to UI
-  hexHistoryQueue.forEach(item => {
-    const historyItem = document.createElement('div');
-    historyItem.setAttribute(
-      'class',
-      'history-item d-flex justify-content-between align-items-center'
-    );
-    historyItem.innerHTML = `
+  hexHistoryQueue
+    .slice()
+    .reverse()
+    .forEach(item => {
+      const historyItem = document.createElement('div');
+      historyItem.setAttribute(
+        'class',
+        'history-item d-flex justify-content-between align-items-center'
+      );
+      historyItem.innerHTML = `
       <div class="history-hex p-2">${item}</div>
       <div
         class="hex-preview mx-2 flex-grow-1"
@@ -133,8 +136,8 @@ function updateHistoryArea() {
         <i class="fa fa-copy"></i> Copy
       </div>
     `;
-    historyContent.appendChild(historyItem);
-  });
+      historyContent.appendChild(historyItem);
+    });
 }
 
 // Sets a random colour to the background
