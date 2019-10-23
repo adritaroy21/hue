@@ -40,6 +40,21 @@ function rgbToHex(value) {
   return hex;
 }
 
+// Search handler function
+function searchHandler() {
+  hex.style.background = 'rgb(233, 236, 239)';
+  if (hex.value.match(/^#?[0-9A-F]{6}$/i) == hex.value) {
+    searchHex = hex.value[0] == '#' ? hex.value : '#' + hex.value;
+    colour.style.backgroundColor = searchHex;
+    fetchColorInfo(searchHex.substring(1, 7));
+    updateHistory(searchHex);
+    updateStorage();
+    updateHistoryArea();
+  } else {
+    hex.value = 'Invalid Hex';
+  }
+}
+
 // Update info area
 function updateInfoArea(data) {
   if (data) {
@@ -147,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Generate new colour
 generate.addEventListener('click', () => {
-  hex.style.background = '#e9ecef';
+  hex.style.background = 'rgb(233, 236, 239)';
   randomColour();
 });
 
@@ -186,23 +201,18 @@ historyContent.addEventListener('click', e => {
 
 // Input field click event listener
 hex.addEventListener('click', () => {
-  hex.style.background = '#ffffff';
-  hex.value = '';
+  if (hex.style.background != 'rgb(255, 255, 255)') {
+    hex.style.background = 'rgb(255, 255, 255)';
+    hex.value = '';
+  }
 });
 
-// Search button event listener
-search.addEventListener('click', () => {
-  hex.style.background = '#e9ecef';
-  if (hex.value.match(/^#[0-9A-F]{6}$/i) == hex.value) {
-    searchHex = hex.value;
-    colour.style.backgroundColor = searchHex;
-    fetchColorInfo(searchHex.substring(1, 7));
-    updateHistory(searchHex);
-    updateStorage();
-    updateHistoryArea();
-  } else {
-    hex.value = 'Invalid Hex';
-  }
+// Search button event listeners
+search.addEventListener('click', searchHandler);
+
+// Search field enter key event listener
+hex.addEventListener('keyup', e => {
+  if (e.key === 'Enter') searchHandler();
 });
 
 // Register Service Worker

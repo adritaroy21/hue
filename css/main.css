@@ -51,7 +51,10 @@ body {
 .primaryCopyBtn,
 .form-control {
   font-size: 1.2em;
+  border-top: none;
   border-right: 1px solid black;
+  border-bottom: none;
+  border-left: none;
 }
 
 .generate:hover,
@@ -70,6 +73,11 @@ body {
   color: black;
   border-radius: 0px;
   background: #e9ecef;
+}
+
+.form-control:focus {
+  border-right: 1px solid black;
+  box-shadow: none;
 }
 
 .rgb,
