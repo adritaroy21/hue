@@ -5,7 +5,6 @@ const copy = document.getElementById('primaryCopyBtn');
 const message = document.getElementById('message');
 const historyContent = document.getElementById('history-content');
 const search = document.getElementById('search');
-
 const name = document.getElementById('name');
 const rgb = document.getElementById('rgb');
 const cmyk = document.getElementById('cmyk');
@@ -13,6 +12,7 @@ const hsv = document.getElementById('hsv');
 const hsl = document.getElementById('hsl');
 const xyz = document.getElementById('xyz');
 const status = document.getElementById('status');
+
 const fields = [name, rgb, cmyk, hsv, hsl, xyz];
 
 let hexHistoryQueue = [];
@@ -126,10 +126,10 @@ function updateHistoryArea() {
     historyItem.innerHTML = `
       <div class="history-hex p-2">${item}</div>
       <div
-        class="hex-preview mx-1 flex-grow-1 px-2"
+        class="hex-preview mx-2 flex-grow-1"
         style="background: ${item};"
       ></div>
-      <div class="copy p-2" id="copy">
+      <div class="copy p-2 mr-1" id="copy">
         <i class="fa fa-copy"></i> Copy
       </div>
     `;
