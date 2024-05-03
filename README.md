@@ -1,4 +1,4 @@
-![Hue logo](https://wp.me/aayJ9O-D7)
+![Hue logo](./images/hue.png)
 ## Meet Hue - A Random Colour Generator & Format Converter
 Here's a list of features:
 * Displays a preview of the generated colour
@@ -18,7 +18,7 @@ Here's a list of features:
 * Progressive Web App
 
 ### Screenshot
-![Hue screenshot](https://wp.me/aayJ9O-D8)
+![Hue screenshot](./images/app-screenshot.png)
 
 ### The Color API
 **Hue generates the colors in-app, but uses [The Color API](https://www.thecolorapi.com/) for conversion to above mentioned formats.**
